@@ -1,0 +1,9 @@
+vidi = videoReader("Dr_1e-01_q0_1e-07_scaled.mp4");
+aft = videoWriter("Dr_1e-01_q0_1e-07_scaled_after.mp4");
+firstF = read(vidi,1);
+imshow(firstF);
+[~, c] = imcrop(firstF);
+for i = 1: round(vidi.frames/2)
+    frame = imcrop(read(vidi,i),c);
+    writeVideo(aft)
+end
