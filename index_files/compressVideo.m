@@ -4,6 +4,7 @@ firstF = read(vidi,1);
 imshow(firstF);
 open(aft);
 [~, c] = imcrop(firstF);
+
 for i = 1: round(vidi.NumFrames)
     if mod(i,3)==0
         frame = imcrop(read(vidi,i),c);
